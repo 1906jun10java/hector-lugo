@@ -6,7 +6,7 @@ public class Wednesday {
 
 		//palandrome("tacocat");
 		
-		System.out.println(recursionReverse("TheFuck"));
+		System.out.println(recursionReverse("Test"));
 
 	}
 
