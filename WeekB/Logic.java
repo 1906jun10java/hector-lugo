@@ -18,7 +18,7 @@ public class Logic {
 		else if(string.charAt(0)=='{') {
 			opp='{';
 		}
-		if(string.charAt(0)=='(') {
+		else if(string.charAt(0)=='(') {
 			opp=')';
 		}
 		
