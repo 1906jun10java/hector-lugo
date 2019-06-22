@@ -63,11 +63,11 @@ public class Wednesday {
 	public static boolean palandromeRecursion(String string) {
 		
 		if(string.length()==0||string.length()==1) {
-			return false;
+			return true;
 		}
 		boolean a= string.charAt(0)==string.charAt(string.length()-1);
 		
-		return a||palandromeRecursion(string.substring(1, string.length()-1));
+		return a&&palandromeRecursion(string.substring(1, string.length()-1));
 		
 	
 	}
