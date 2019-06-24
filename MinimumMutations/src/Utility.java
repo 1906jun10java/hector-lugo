@@ -6,6 +6,11 @@ public class Utility {
 		if(s==e) {
 			return 0;
 		}
+		
+		if(e!=b[b.length-1]) {
+			return -1;
+		}
+		
 		for (int i=0;i<b.length;i++) {
 			int counter=0;
 			b[i]=b[i].replaceAll("([^ACGT])", "");
