@@ -28,14 +28,14 @@ public class Utility {
 					
 					if(s.charAt(j)!=b[i].charAt(j)) {
 						counter++;
-						System.out.println("is b[0] valid?"+counter+" "+i+" "+j);
+						
 					}
 				}
 				else if(i>0) {
 					
 					if(b[i-1].charAt(j)!=b[i].charAt(j)) {
 						counter++;
-						System.out.println("is b[i] valid?"+counter+" "+"i="+i+" "+"j="+j);
+						
 					}
 				}
 			}
