@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Pokeman Cards</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--<link rel="stylesheet" type="text/css" media="screen" href="styles.css">-->
+    <script src="pokemonAPI.js"></script>
+</head>
+
+
+<body>
+
+    <div id='addBook'>
+                Title:<br>
+                <input id='addTitle' type="text" name="title" >
+                <br>
+                Author:<br>
+                <input id='addAuthor' type="text" name="author" >
+                <br>
+                Genre:<br>
+                <input id='addGenre' type="text" name="Genre" >
+                <br>
+                Cover URL:<br>
+                <input id='addCover' type="text" name="Cover URL" >
+                <br><br>
+                <input id='addB' type="submit" value="Add New Book">
+       
+    </div>
+
+    <div>
+            <p id='booktitle'></p>
+            <p id='authorbook'></p>
+            <p id='bookgenre'></p>
+            <img id='imgbook'>
+
+    </div>
+
+    <div>
+        <input id='new' type="submit" value="Reload Book List">
+
+        <ul id='booklist'>
+            
+        </ul>
+
+    </div>
+
+
+    <div>
+        <p id='name'></p>
+        <p id='number'></p>
+        <p id='series'></p>
+        <img id='img'>
+    </div>
+
+    <div>
+        <button type="button" id="pokemon">Click for pokemon card info</button>
+    </div>
+
+</body>
+
+</html>
