@@ -24,9 +24,10 @@
    
     <div class="container">
 
-
-        <div class="row">
-                <div class="col" id='BasicInfo'>
+           
+        <div class="row justify-content-md-center">
+                <div class="col"></div>
+                <div class="col-8" id='BasicInfo'>
 
                         <ul class="list-group list-group-horizontal">
                             <li class="list-group-item list-group-item-light" id='employeeID'>
@@ -46,14 +47,14 @@
                         </ul>
                 
                     </div>
+                    <div class="col"></div>
         </div>
            
 
     
    
         <h3>Change Your Info:</h3>
-        <br>
-        <br>
+      
 
         <div class="row">
 
@@ -73,9 +74,7 @@
              <input class="btn btn-outline-dark" type="submit" value="Send Request"/>
          </form>
         </div>
-     
-     <br>
-         <br>
+    
      
         <div class="col">
             <button class="btn btn-outline-dark" id="seeEmail">Change Email</button>
@@ -88,8 +87,7 @@
         <input class="btn btn-outline-dark" type="submit" value="Send Request"/>
     </form>
 </div>
-<br>
-<br>
+
 
 
        <div class ="col">
@@ -116,39 +114,69 @@
 
 <br>
 
-    <div id='add'>
+<br>
+
+
+<div class="row justify-content-md-center">
+
+        <div class="col"></div>
+        <div class="col" id='add'>
 
       
-       <h3>Make a new request </h3>>
+                <h3>Make a new request </h3>>
+         
+                      <button class="btn btn-outline-dark" id="seeMakeRequest">Make a new Request</button>
+                     <button class="btn btn-outline-dark" id="closeMakeRequest">Close</button>
+                     <iframe name="hiddenFrame" width="0" height="0" style="display: none;"></iframe>
+                 <form id="updateRequest" action="add" method='post'enctype="multipart/form-data" style="display: none"  >
+         
+                         <fieldset>
+                                 <legend>amount:</legend>
+                                 <input class="btn btn-outline-dark" required autocomplete="off" name="amount"/>
+                             </fieldset>
+                             <fieldset>
+                                     <legend>img:</legend>
+                                     <input  type="file" name="amount"/>
+                             <fieldset>
+         
+                     <input class="btn btn-outline-dark" type="submit" value="Send Request"/>
+                 </form>
+             </div>
+             <div class="col"></div>
+</div>
+   
+<br>
+<br>
+<br>
 
-             <button class="btn btn-outline-dark" id="seeMakeRequest">Make a new Request</button>
-            <button class="btn btn-outline-dark" id="closeMakeRequest">Close</button>
-            <iframe name="hiddenFrame" width="0" height="0" style="display: none;"></iframe>
-        <form id="updateRequest" action="add" method='post'enctype="multipart/form-data" style="display: none"  >
 
-                <fieldset>
-                        <legend>amount:</legend>
-                        <input class="btn btn-outline-dark" required autocomplete="off" name="amount"/>
-                    </fieldset>
-                    <fieldset>
-                            <legend>img:</legend>
-                            <input  type="file" name="amount"/>
-                    <fieldset>
 
-            <input class="btn btn-outline-dark" type="submit" value="Send Request"/>
-        </form>
+
+
+
+<div class="row">
+    <div class="col">
+            <h3>See Your Pending Requests</h3>
+            <button class="btn btn-outline-dark" id="seePendingRequest">See Your Pending</button>
+           <button class="btn btn-outline-dark" id="closePendingRequest">Close</button>
+       
+
+       <ul class="list-group" id='pendingR' style="display: none">
+
+       </ul>
     </div>
 
-
-
-
-
-
-
-
-
-
-
+    <div class="col">
+            <h3>See Your Resolved Requests</h3>
+            <div id='acceptedRejected' >
+                    <input class="btn btn-outline-dark" id='resolvedButton' type="submit" value="See Resolved Request"/>
+                    <button class="btn btn-outline-dark" id="closeMyResolvedRequest">Close</button>
+                <ul class="list-group" id='a-r-r' style="display: none">
+        
+                </ul>
+            </div>
+        </div>
+</div>
 
 
 
@@ -156,18 +184,16 @@
 
 
     <div id='pending'>
-        <h3>See Your Pending Requests</h3>
-             <button class="btn btn-outline-dark" id="seePendingRequest">See Your Pending</button>
-            <button class="btn btn-outline-dark" id="closePendingRequest">Close</button>
         
 
-        <ul class="list-group" id='pendingR' style="display: none">
-
-        </ul>
-
     </div>
             
 
+    <br>
+    <br>
+    <br>
+
+
 
 
 
@@ -181,18 +207,10 @@
 
 
             
-    <h3>See Your Resolved Requests</h3>
-    <div id='acceptedRejected' >
-            <input class="btn btn-outline-dark" id='resolvedButton' type="submit" value="See Resolved Request"/>
-            <button class="btn btn-outline-dark" id="closeMyResolvedRequest">Close</button>
-        <ul class="list-group" id='a-r-r' style="display: none">
-
-        </ul>
-    </div>
+    
 
 
-
-    </div>
+  
 
 
 
@@ -223,9 +241,15 @@
 
         <div class="container">
 
+
+
+         <div class= "row">
+
+         
+        
         <h3>See Your Employees</h3>
 
-        <div id='myEmployees'>
+        <div class="col" id='myEmployees'>
 
           <input class="btn btn-outline-dark" id='seeMyEmployees' type="submit" value="See My Employees"/>
           <input class="btn btn-outline-dark" id='hideMyEmployees' type="submit" value="Hide My Employees"/>
@@ -256,7 +280,7 @@
         </div>
 
 
-        <div id='individualEmployee'>
+        <div class="col" id='individualEmployee'>
 
 
 
@@ -276,10 +300,18 @@
             <input class="btn btn-outline-dark" id='show detailed info' type="submit" style.display="block" value="Show"/>
 
         </div>
+    </div>
 
+    <br>
+    <br>
+    <br>
+
+    <div class="row">
+
+  
         <h3>See All Employees</h3>
 
-        <div>
+        <div class="col">
              <input class="btn btn-outline-dark" id='seeAllEmpl' type="submit" value="See All Employees"/>
              <input class="btn btn-outline-dark" id='hideAllEmployees' type="submit" value="Hide All Employees"/>
 
@@ -309,7 +341,7 @@
             
         </div>
 
-        <div>
+        <div class="col">
 
                 
             <h3>See All Resolved Requests</h3>
@@ -323,14 +355,24 @@
 
 
         </div>
+    </div>
 
-
+        <!---->
 
     </div>
 
 
 
     </div>
+
+    <br>
+    <br>
+    <br>
+
+
+    <footer class="jumbotron text-center">
+
+    </footer>
 
 </body>
 
