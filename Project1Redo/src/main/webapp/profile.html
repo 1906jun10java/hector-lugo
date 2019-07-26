@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Your Profile</title>
+<script src="project-1.js"></script>
+</head>
+<body>
+    <h1 id='name'></h1>
+
+    <form action="logout" method='get'>
+        <input type="submit" value="logout"/>
+    </form>
+
+    <div id='BasicInfo'>
+        <ul>
+            <li id='employeeID'>
+
+            </li>
+            <li id='managerName'>
+
+            </li>
+            <li id='address'>
+
+            </li>
+
+            <li id='email'>
+
+            </li>
+
+        </ul>
+    </div>
+
+    <div >
+           
+         <form action="userUpdate" method='post'  >
+                 <fieldset>
+                         <legend>address:</legend>
+                         <input required autocomplete="off" name="address"/>
+                     </fieldset>
+             <input type="submit" value="Send Request"/>
+         </form>
+     </div>
+
+     <div >
+    
+    <form action="userUpdate" method='post'  >
+            <fieldset>
+                    <legend>email:</legend>
+                    <input required autocomplete="off" name="email"/>
+                </fieldset>
+        <input type="submit" value="Send Request"/>
+    </form>
+</div>
+
+<div >
+    
+<form action="userUpdate" method='post'  >
+        <fieldset>
+                <legend>Passord:</legend>
+                <input required autocomplete="off" name="oldPassword"/>
+            </fieldset>
+
+           <fieldset>
+                <legend>New Password:</legend>
+                <input required autocomplete="off" name="newPassword"/>
+            </fieldset>
+    <input type="submit" value="Send Request"/>
+</form>
+
+</div>
+
+
+
+    <div id='add'>
+       <h3>Make a new request </h3>>
+            <iframe name="hiddenFrame" width="0" height="0" style="display: none;"></iframe>
+        <form action="add" method='post'enctype="multipart/form-data"  >
+            
+                <fieldset>
+                        <legend>amount:</legend>
+                        <input required autocomplete="off" name="amount"/>
+                    </fieldset>
+                    <fieldset>
+                            <legend>img:</legend>
+                            <input  type="file" name="amount"/>
+                    <fieldset>
+
+            <input type="submit" value="Send Request"/>
+        </form>
+    </div>
+
+
+
+    <div id='pending'>
+        <h3>See Your Pending Requests</h3>
+        <input id='pendingButton' type="submit" value="See Pending Request"/>
+
+        <ul id='pendingR'>
+
+        </ul>
+
+    </div>
+
+    <h3>See Your Resolved Requests</h3>
+    <div id='acceptedRejected'>
+            <input id='resolvedButton' type="submit" value="See Resolved Request"/>
+        <ul id='a-r-r'>
+
+        </ul>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div id='managerStuff' style='visibility: hidden'>
+
+        <h3>Manager Section</h3>
+
+        <div id='myEmployees'>
+
+          <input id='seeMyEmployees' type="submit" value="See My Employees"/>
+          <input id='hideMyEmployees' type="submit" value="Hide My Employees"/>
+            <table id='myEmployeeTable' style= "visibility: hidden" >
+                    <caption>My Employees</caption>
+                <tr>
+                    <th>
+                        Name
+                    </th>
+                    <th>
+                        ID
+                    </th>
+                    <th>
+                        Address
+                    </th>
+                    <th>
+                            Requests
+                        </th>
+                </tr>
+                <tbody id='tbody'>
+
+                </tbody>
+                
+
+            </table>
+        </div>
+
+
+        <div id='individualEmployee'style='visibility: hidden'>
+            <ul id='myEmployeependingR'>
+
+            </ul>
+            <div id='employeeRequestDetails' style='visibility: hidden'>
+                <input id='AcceptRequest' type="submit" value="Accept"/>
+                <input id='RejectRequest' type="submit" value="Reject"/>
+
+            </div>
+        </div>
+
+        <h3>See All Employees</h3>
+
+        <div>
+             <input id='seeAllEmpl' type="submit" value="See All Employees"/>
+             <input id='hideAllEmployees' type="submit" value="Hide All Employees"/>
+
+             <table id='allEmployeeTable' style= "visibility: hidden" >
+                    <caption>My Employees</caption>
+                <tr>
+                    <th>
+                        Name
+                    </th>
+                  
+                    <th>
+                        Manager
+                    </th>
+                    <th>
+                          Email  
+                    </th>
+                </tr>
+                <tbody id='tbodyAll'>
+
+                </tbody>
+              
+
+            </table>
+           
+            
+        </div>
+
+        <div>
+            <h3>See All Resolved Requests</h3>
+            <input id='allResolved' type="submit" value="See All Resolved Request"/>
+
+            <ul id='allRRequests'>
+    
+            </ul>
+
+
+        </div>
+
+
+
+
+
+
+
+    </div>
+
+</body>
+
+</html> 
