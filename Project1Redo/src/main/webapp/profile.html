@@ -32,7 +32,8 @@
     </div>
 
     <div >
-           
+            <button id="seeAddress">Change Address</button>
+            <button id="closeAddress">Close</button>
          <form action="userUpdate" method='post'  >
                  <fieldset>
                          <legend>address:</legend>
@@ -40,10 +41,12 @@
                      </fieldset>
              <input type="submit" value="Send Request"/>
          </form>
+        
      </div>
 
      <div >
-    
+            <button id="seeEmail">Change Email</button>
+            <button id="closeEmail">Close</button>
     <form action="userUpdate" method='post'  >
             <fieldset>
                     <legend>email:</legend>
@@ -55,6 +58,8 @@
 
 <div >
     
+        <button id="seePassword">Change Password</button>
+        <button id="closePassword">Close</button>
 <form action="userUpdate" method='post'  >
         <fieldset>
                 <legend>Passord:</legend>
@@ -73,10 +78,15 @@
 
 
     <div id='add'>
+
+            
        <h3>Make a new request </h3>>
+
+       <button id="seeMakeRequest">Make a new Request</button>
+            <button id="closeMakeRequest">Close</button>
             <iframe name="hiddenFrame" width="0" height="0" style="display: none;"></iframe>
         <form action="add" method='post'enctype="multipart/form-data"  >
-            
+
                 <fieldset>
                         <legend>amount:</legend>
                         <input required autocomplete="off" name="amount"/>
@@ -94,6 +104,8 @@
 
     <div id='pending'>
         <h3>See Your Pending Requests</h3>
+        <button id="seePendingRequest">See Your Pending</button>
+            <button id="closePendingRequest">Close</button>
         <input id='pendingButton' type="submit" value="See Pending Request"/>
 
         <ul id='pendingR'>
@@ -101,7 +113,8 @@
         </ul>
 
     </div>
-
+            <button id="seeResolvedRequest">See Your Resolved</button>
+            <button id="closeResolvedRequest">Close</button>
     <h3>See Your Resolved Requests</h3>
     <div id='acceptedRejected'>
             <input id='resolvedButton' type="submit" value="See Resolved Request"/>
@@ -207,10 +220,14 @@
         </div>
 
         <div>
-            <h3>See All Resolved Requests</h3>
-            <input id='allResolved' type="submit" value="See All Resolved Request"/>
 
-            <ul id='allRRequests'>
+                
+            <h3>See All Resolved Requests</h3>
+            
+                
+            <input id='allResolved' type="submit" value="See All Resolved Request"/>
+            <button id="closeAllResolvedRequest">Close</button>
+            <ul id='allRRequests' style="display: none">
     
             </ul>
 

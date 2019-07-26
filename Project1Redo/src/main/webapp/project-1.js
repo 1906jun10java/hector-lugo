@@ -113,12 +113,12 @@ function getPendingList(xhr) {
     }
     
     for(i=0;i<pendingList.length;i++){
-
+        let currentID=pendingList[i].rID;
         if(pendingList[i]===undefined){
         }
         
         else{
-        let currentID=pendingList[i];
+        
 
         let element=document.createElement('li');
         element.id='pendingListElement '+i;
@@ -128,18 +128,26 @@ function getPendingList(xhr) {
         document.getElementById("pendingR").appendChild(element);
         let x=document.createElement('div');
         
+        element.appendChild(x);
+
+        element.onclick=function (){
+            counter++
+            x.id="imgDiv"+counter;
+            let p=x
+        let c=p.lastChild;
+         while(c){
+        p.removeChild(c);
+        c=p.lastChild;
+    }
+           
+           makeImgButtons(x,currentID);
+
+        }
+        
     }
     }
 
-    function produceImgSeeHideButtons(currentid,parent){
-       let imgB= document.createElement("input");
-       imgB.value="img";
-     
-
-       let closeB= document.createElement("input");
-       imgB.value="close";
-
-    }
+   
 
     
     
@@ -158,7 +166,7 @@ function getMyResolved(xhr) {
     }
     
     for(i=0;i<pendingList.length;i++){
-
+        let currentID=pendingList[i].rID;
         if(pendingList[i]===undefined){
         }
         
@@ -181,11 +189,27 @@ function getMyResolved(xhr) {
 
 
         document.getElementById("a-r-r").appendChild(element);
+        let x=document.createElement('div');
+        x.id="imgDiv"+currentID;
+        element.appendChild(x);
 
+        element.onclick=function (){
+            counter++
+            x.id="imgDiv"+counter;
+
+            let p=x
+        let c=p.lastChild;
+         while(c){
+        p.removeChild(c);
+        c=p.lastChild;
+    }
+           
+           makeImgButtons(x,currentID);
+
+        }
         
     }
     }
-    
 }
 
 function getAllResolved(xhr) {
@@ -201,7 +225,7 @@ function getAllResolved(xhr) {
     }
     
     for(i=0;i<pendingList.length;i++){
-
+       let currentID=pendingList[i].rID;
         if(pendingList[i]===undefined){
         }
         
@@ -223,17 +247,30 @@ function getAllResolved(xhr) {
                 element.appendChild(elementstxt);
             }
         
-       
+            p.appendChild(element);
 
 
-        document.getElementById("allRRequests").appendChild(element);
-
-        
-    }
-    }
+            var x=document.createElement('div');
+            
+            element.appendChild(x);
     
-}
-
+            element.onclick=function (){
+                counter++
+                x.id="imgDiv"+counter;
+                let p=x
+            let c=p.lastChild;
+             while(c){
+            p.removeChild(c);
+            c=p.lastChild;
+        }
+               
+               makeImgButtons(x,currentID);
+    
+            }
+            
+        }
+        }
+    }
 function allEmployees(xhr){
    
         let employeeList = JSON.parse(xhr.responseText);
@@ -333,10 +370,10 @@ function getMyEmployeeList(xhr) {
 
         document.getElementById('individualEmployee').style.visibility='visible'
 
-        let x=document.getElementById("myEmployeependingR").childNodes.length-1;
+        
 
-        for(i=x;i<employeeRequests.length;i++){
-            
+        for(i=0;i<employeeRequests.length;i++){
+            currentID=employeeRequests[i].rID;
             if(employeeRequests[i]===undefined){
             }
             
@@ -348,9 +385,28 @@ function getMyEmployeeList(xhr) {
             element.appendChild(elementstxt);
             document.getElementById("myEmployeependingR").appendChild(element);
             let currentID=employeeRequests[i].rID;
-            element.onclick=function(){
+
+
+           
+                let x=document.createElement('div');
+            
+            
+                
+              element.appendChild(x);
+              element.onclick=function(){
                 requestID=currentID;
+                counter++
+                x.id="imgDiv"+counter;
                 document.getElementById('employeeRequestDetails').style.visibility='visible'
+
+                let p=x
+                let c=p.lastChild;
+                 while(c){
+                p.removeChild(c);
+                c=p.lastChild;
+            }
+                   
+                   makeImgButtons(x,currentID);
 
             }
             
@@ -360,7 +416,50 @@ function getMyEmployeeList(xhr) {
     }
 
 
+    
+
+
+
 function requestUpdateAccepted(){
     document.getElementById('employeeRequestDetails').style.visibility='hidden'
+}
+
+function makeImgButtons(parentElementWithId,currentID){
+    let imgB=document.createElement('input');
+    imgB.type="submit";
+    imgB.value="See Img";
+    imgB.class="";
+    element=document.getElementById("imgDiv"+counter);
+    element.appendChild(imgB);
+    imgB.onclick=function(){
+        requestID=currentID;
+        sendAjaxGet('http://localhost:8082/Project1/img?rID='+requestID,imgButtonFunction)
+    }
+
+
+
+}
+
+function imgButtonFunction(xhr){
+    let imgJson = JSON.parse(xhr.responseText);
+
+   img= document.createElement("img");
+
+   if(imgJson.charAt(0)==='/'){
+    img.src="data:image/jpg;base64,"+imgJson
+   }
+   else if(imgJson.charAt(0)==='i'){
+    img.src="data:image/png;base64,"+imgJson
+   }
+   else if(imgJson.charAt(0)==='R'){
+    img.src="data:image/gif;base64,"+imgJson
+   }
+   else if(imgJson.charAt(0)==='U'){
+    img.src="data:image/webp;base64,"+imgJson
+   }
+   let x=document.getElementById("imgDiv"+counter
+   );
+   console.log(x);
+   x.appendChild(img);
 }
 
