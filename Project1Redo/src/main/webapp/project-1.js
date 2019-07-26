@@ -3,41 +3,163 @@ window.onload = function(){
     
     sendAjaxGet('http://localhost:8082/Project1/session',getBasicInfo);
 
-    document.getElementById('pendingButton').onclick=function(){
+    document.getElementById('seePendingRequest').onclick=function(){
+        document.getElementById('pendingR').style.display='block';
         sendAjaxGet('http://localhost:8082/Project1/pending?userID='+globalID,getPendingList);
     };
 
 
     document.getElementById('resolvedButton').onclick=function(){
+        document.getElementById('a-r-r').style.display='block';
         sendAjaxGet('http://localhost:8082/Project1/resolved?userID='+globalID,getMyResolved);
+    };
+
+    document.getElementById('closeMyResolvedRequest').onclick=function(){
+        document.getElementById('a-r-r').style.display='none';
+       
     };
 
 
 
     document.getElementById('seeMyEmployees').onclick=function(){
+        document.getElementById('myEmployeeTable').style.display='block';
         sendAjaxGet('http://localhost:8082/Project1/employeeList',getMyEmployeeList);
+
+
+
     }
-    document.getElementById('hideMyEmployees').onclick=function(){
-        document.getElementById('myEmployeeTable').style.visibility='hidden';
+    document.getElementById('seeAddress').onclick=function(){
+        document.getElementById('userUpdateAddress').style.display='block';
         
     }
 
+    document.getElementById('closeAddress').onclick=function(){
+        document.getElementById('userUpdateAddress').style.display='none';
+        
+    }
+
+
+
+    document.getElementById('seeEmail').onclick=function(){
+        document.getElementById('userUpdateEmail').style.display='block';
+        
+    }
+
+    document.getElementById('closeEmail').onclick=function(){
+        document.getElementById('userUpdateEmail').style.display='none';
+        
+    }
+
+
+    document.getElementById('seePassword').onclick=function(){
+        document.getElementById('userUpdatePassword').style.display='block';
+        
+    }
+
+    document.getElementById('closePassword').onclick=function(){
+        document.getElementById('userUpdatePassword').style.display='none';
+        
+    }
+
+
+    document.getElementById('seeMakeRequest').onclick=function(){
+        document.getElementById('updateRequest').style.display='block';
+        
+    }
+
+    document.getElementById('closeMakeRequest').onclick=function(){
+        document.getElementById('updateRequest').style.display='none';
+        
+    }
+/*
+    document.getElementById('seePendingRequest').onclick=function(){
+        document.getElementById('pendingR').style.display='block';
+        
+    }
+*/
+    document.getElementById('closePendingRequest').onclick=function(){
+        document.getElementById('pendingR').style.display='none';
+        
+    }
+
+
+    
+
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+    document.getElementById('hideMyEmployees').onclick=function(){
+        document.getElementById('myEmployeeTable').style.display='none';
+        
+    }
+
+
+
+    
+
+
+    document.getElementById('hideAllEmployees').onclick=function(){
+        document.getElementById('allEmployeeTable').style.display='none';
+        
+    }
+
+    document.getElementById('hideemployee detailed info').onclick=function(){
+        document.getElementById('employeeRequestDetails').style.display='none';
+        document.getElementById('myEmployeependingR').style.display='none';
+        
+    }
+    document.getElementById('show detailed info').onclick=function(){
+        document.getElementById('employeeRequestDetails').style.display='block';
+        document.getElementById('myEmployeependingR').style.display='block';
+        
+    }
+
+
+
+
+
+
+
     document.getElementById('seeAllEmpl').onclick=function(){
+        document.getElementById('allEmployeeTable').style.display='block';
+        document.getElementById('myEmployeependingR').style.display='block';
         sendAjaxGet('http://localhost:8082/Project1/allEmployees',allEmployees);
     }
 
+
+
     document.getElementById('hideAllEmployees').onclick=function(){
-        document.getElementById('allEmployeeTable').style.visibility='hidden';
+        document.getElementById('allEmployeeTable').style.display='none';
         
     }
 
     document.getElementById('allResolved').onclick=function(){
+        document.getElementById('allRRequests').style.display='block';
         sendAjaxGet('http://localhost:8082/Project1/allResolved',getAllResolved);
+    }
+
+    document.getElementById('closeAllResolvedRequest').onclick=function(){
+        document.getElementById('allRRequests').style.display='none';
+        
     }
 
 
 
     document.getElementById('AcceptRequest').onclick=function(){
+       
         sendAjaxGet('http://localhost:8082/Project1/updateRequest?status=1&rID='+requestID,requestUpdateAccepted);
     }
 
@@ -77,7 +199,7 @@ function getBasicInfo(xhr) {
     }
     else{
         if(basicInfo.isManager===1){
-            document.getElementById('managerStuff').style.visibility='visible';
+            document.getElementById('managerStuff').style.display="block";
         }
     
     document.getElementById('employeeID').innerText="ID: "+basicInfo.employeeID;
@@ -86,7 +208,7 @@ function getBasicInfo(xhr) {
     document.getElementById('name').innerText="Hello "+basicInfo.name;
     document.getElementById('email').innerText="Email: "+basicInfo.email;
     document.getElementById('address').onclick=function(){
-        document.getElementById('changeAddress').style.visibility='visible';
+        document.getElementById('changeAddress').style.display="block";
         
     }
 
@@ -250,7 +372,7 @@ function getAllResolved(xhr) {
             p.appendChild(element);
 
 
-            var x=document.createElement('div');
+            let x=document.createElement('div');
             
             element.appendChild(x);
     
@@ -275,7 +397,7 @@ function allEmployees(xhr){
    
         let employeeList = JSON.parse(xhr.responseText);
     
-        document.getElementById('allEmployeeTable').style.visibility='visible'
+        document.getElementById('allEmployeeTable').style.display="block"
         console.log(employeeList);
     
        
@@ -286,10 +408,11 @@ function allEmployees(xhr){
             p.removeChild(c);
             c=p.lastChild;
         }
+        console.log(employeeList.length);
         for(i=0;i<employeeList.length;i++){
             let trElement=document.createElement('tr');
             
-            trElement.id='EmployeeRow '+i;
+            trElement.id='AllEmployeeRow '+i;
     
             document.getElementById("tbodyAll").appendChild(trElement);
             
@@ -311,8 +434,8 @@ function allEmployees(xhr){
 function getMyEmployeeList(xhr) {
     let employeeList = JSON.parse(xhr.responseText);
 
-    document.getElementById('myEmployeeTable').style.visibility='visible'
-    console.log(employeeList);
+    document.getElementById('myEmployeeTable').style.display="block"
+    
 
    
 
@@ -345,6 +468,8 @@ function getMyEmployeeList(xhr) {
         tdPending.appendChild(document.createTextNode('Pending Requests'));
         document.getElementById(trElement.id).appendChild(tdPending);
         tdPending.onclick=function(){
+
+            document.getElementById("myEmployeependingR").display="block"
             sendAjaxGet('http://localhost:8082/Project1/pending?userID='+currentID,getMyEmployeePendingList);
         }
 
@@ -368,12 +493,13 @@ function getMyEmployeeList(xhr) {
     }
         
 
-        document.getElementById('individualEmployee').style.visibility='visible'
+        document.getElementById('individualEmployee').style.disply="block"
 
         
 
         for(i=0;i<employeeRequests.length;i++){
             currentID=employeeRequests[i].rID;
+
             if(employeeRequests[i]===undefined){
             }
             
@@ -397,7 +523,8 @@ function getMyEmployeeList(xhr) {
                 requestID=currentID;
                 counter++
                 x.id="imgDiv"+counter;
-                document.getElementById('employeeRequestDetails').style.visibility='visible'
+                document.getElementById('employeeRequestDetails').style.display="block";
+                document.getElementById('hideemployee detailed info').style.display="block";
 
                 let p=x
                 let c=p.lastChild;

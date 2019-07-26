@@ -4,123 +4,176 @@
 <meta charset="ISO-8859-1">
 <title>Your Profile</title>
 <script src="project-1.js"></script>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body>
-    <h1 id='name'></h1>
 
-    <form action="logout" method='get'>
-        <input type="submit" value="logout"/>
-    </form>
 
-    <div id='BasicInfo'>
-        <ul>
-            <li id='employeeID'>
+    <div class="jumbotron text-center">
+            <h1 id='name'></h1>
+
+            <form action="logout" method='get'>
+                <input class="btn btn-danger" type="submit" value="logout"/>
+            </form>
+
+    </div>
+   
+    <div class="container">
+
+    <div class="list-group list-group-horizontal" id='BasicInfo'>
+
+        <ul class="list-group">
+            <li class="list-group-item list-group-item-light" id='employeeID'>
 
             </li>
-            <li id='managerName'>
+            <li class="list-group-item list-group-item-light" id='managerName'>
 
             </li>
-            <li id='address'>
+            <li class="list-group-item list-group-item-light" id='address'>
 
             </li>
 
-            <li id='email'>
+            <li class="list-group-item list-group-item-light" id='email'>
 
             </li>
 
         </ul>
     </div>
 
-    <div >
-            <button id="seeAddress">Change Address</button>
-            <button id="closeAddress">Close</button>
-         <form action="userUpdate" method='post'  >
+   
+        <h3>Change Your Info:</h3>
+        
+        
+            <button class="btn btn-outline-dark" id="seeAddress">Change Address</button>
+            <button class="btn btn-outline-dark" id="closeAddress">Close</button>
+
+
+         <form id="userUpdateAddress" action="userUpdate" method='post' style="display: none" >
                  <fieldset>
                          <legend>address:</legend>
-                         <input required autocomplete="off" name="address"/>
+                         <input class="btn btn-outline-dark" required autocomplete="off" name="address"/>
                      </fieldset>
              <input type="submit" value="Send Request"/>
          </form>
         
-     </div>
-
-     <div >
-            <button id="seeEmail">Change Email</button>
-            <button id="closeEmail">Close</button>
-    <form action="userUpdate" method='post'  >
+     
+     <br>
+         <br>
+     
+        
+            <button class="btn btn-outline-dark" id="seeEmail">Change Email</button>
+            <button class="btn btn-outline-dark" id="closeEmail">Close</button>
+    <form id="userUpdateEmail" action="userUpdate" method='post' style="display: none">
             <fieldset>
                     <legend>email:</legend>
-                    <input required autocomplete="off" name="email"/>
+                    <input class="btn btn-outline-dark" required autocomplete="off" name="email"/>
                 </fieldset>
         <input type="submit" value="Send Request"/>
     </form>
-</div>
 
-<div >
-    
-        <button id="seePassword">Change Password</button>
-        <button id="closePassword">Close</button>
-<form action="userUpdate" method='post'  >
+<br>
+<br>
+
+
+       
+        <button class="btn btn-outline-dark" id="seePassword">Change Password</button>
+        <button class="btn btn-outline-dark" id="closePassword">Close</button>
+<form id="userUpdatePassword" action="userUpdate" method='post' style="display: none" >
         <fieldset>
                 <legend>Passord:</legend>
-                <input required autocomplete="off" name="oldPassword"/>
+                <input class="btn btn-outline-dark" required autocomplete="off" name="oldPassword"/>
             </fieldset>
 
            <fieldset>
                 <legend>New Password:</legend>
-                <input required autocomplete="off" name="newPassword"/>
+                <inputclass="btn btn-outline-dark" required autocomplete="off" name="newPassword"/>
             </fieldset>
-    <input type="submit" value="Send Request"/>
+    <input class="btn btn-outline-dark" type="submit" value="Send Request"/>
 </form>
 
-</div>
+
+<br>
 
 
 
     <div id='add'>
 
-            
+        <div>
+
+        </div>
        <h3>Make a new request </h3>>
 
-       <button id="seeMakeRequest">Make a new Request</button>
-            <button id="closeMakeRequest">Close</button>
+             <button class="btn btn-outline-dark" id="seeMakeRequest">Make a new Request</button>
+            <button class="btn btn-outline-dark" id="closeMakeRequest">Close</button>
             <iframe name="hiddenFrame" width="0" height="0" style="display: none;"></iframe>
-        <form action="add" method='post'enctype="multipart/form-data"  >
+        <form id="updateRequest" action="add" method='post'enctype="multipart/form-data" style="display: none"  >
 
                 <fieldset>
                         <legend>amount:</legend>
-                        <input required autocomplete="off" name="amount"/>
+                        <input class="btn btn-outline-dark" required autocomplete="off" name="amount"/>
                     </fieldset>
                     <fieldset>
                             <legend>img:</legend>
                             <input  type="file" name="amount"/>
                     <fieldset>
 
-            <input type="submit" value="Send Request"/>
+            <input class="btn btn-outline-dark" type="submit" value="Send Request"/>
         </form>
     </div>
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     <div id='pending'>
         <h3>See Your Pending Requests</h3>
-        <button id="seePendingRequest">See Your Pending</button>
-            <button id="closePendingRequest">Close</button>
-        <input id='pendingButton' type="submit" value="See Pending Request"/>
+             <button class="btn btn-outline-dark" id="seePendingRequest">See Your Pending</button>
+            <button class="btn btn-outline-dark" id="closePendingRequest">Close</button>
+        
 
-        <ul id='pendingR'>
+        <ul class="list-group" id='pendingR' style="display: none">
 
         </ul>
 
     </div>
-            <button id="seeResolvedRequest">See Your Resolved</button>
-            <button id="closeResolvedRequest">Close</button>
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
     <h3>See Your Resolved Requests</h3>
-    <div id='acceptedRejected'>
-            <input id='resolvedButton' type="submit" value="See Resolved Request"/>
-        <ul id='a-r-r'>
+    <div id='acceptedRejected' >
+            <input class="btn btn-outline-dark" id='resolvedButton' type="submit" value="See Resolved Request"/>
+            <button class="btn btn-outline-dark" id="closeMyResolvedRequest">Close</button>
+        <ul class="list-group" id='a-r-r' style="display: none">
 
         </ul>
+    </div>
+
+
+
     </div>
 
 
@@ -141,34 +194,38 @@
 
 
 
+    <div class="container" id='managerStuff' style='display: none'>
+        
+        <div class="jumbotron text-center">
+                <h3>Manager Section</h3>
+        </div>
+      
 
 
-
-
-    <div id='managerStuff' style='visibility: hidden'>
-
-        <h3>Manager Section</h3>
+        <h3>See Your Employees</h3>
 
         <div id='myEmployees'>
 
-          <input id='seeMyEmployees' type="submit" value="See My Employees"/>
-          <input id='hideMyEmployees' type="submit" value="Hide My Employees"/>
-            <table id='myEmployeeTable' style= "visibility: hidden" >
-                    <caption>My Employees</caption>
-                <tr>
-                    <th>
-                        Name
-                    </th>
-                    <th>
-                        ID
-                    </th>
-                    <th>
-                        Address
-                    </th>
-                    <th>
-                            Requests
-                        </th>
-                </tr>
+          <input class="btn btn-outline-dark" id='seeMyEmployees' type="submit" value="See My Employees"/>
+          <input class="btn btn-outline-dark" id='hideMyEmployees' type="submit" value="Hide My Employees"/>
+            <table class="table" id='myEmployeeTable' style= "display: none" >
+                <thead class="thead-light">
+                        <tr>
+                                <th>
+                                    Name
+                                </th>
+                                <th>
+                                    ID
+                                </th>
+                                <th>
+                                    Address
+                                </th>
+                                <th>
+                                        Requests
+                                    </th>
+                            </tr>
+                </thead>
+                
                 <tbody id='tbody'>
 
                 </tbody>
@@ -178,37 +235,49 @@
         </div>
 
 
-        <div id='individualEmployee'style='visibility: hidden'>
-            <ul id='myEmployeependingR'>
+        <div id='individualEmployee'>
+
+
+
+            <ul class="list-group" id='myEmployeependingR'style='display: block'>
 
             </ul>
-            <div id='employeeRequestDetails' style='visibility: hidden'>
-                <input id='AcceptRequest' type="submit" value="Accept"/>
-                <input id='RejectRequest' type="submit" value="Reject"/>
+
+
+
+            <div id='employeeRequestDetails' style='display: none'>
+                <input class="btn btn-outline-dark" id='AcceptRequest' type="submit" value="Accept"/>
+                <input class="btn btn-outline-dark" id='RejectRequest' type="submit" value="Reject"/>
 
             </div>
+
+            <input class="btn btn-outline-dark" id='hideemployee detailed info' type="submit" style.display="none" value="Close"/>
+            <input class="btn btn-outline-dark" id='show detailed info' type="submit" style.display="block" value="Show"/>
+
         </div>
 
         <h3>See All Employees</h3>
 
         <div>
-             <input id='seeAllEmpl' type="submit" value="See All Employees"/>
-             <input id='hideAllEmployees' type="submit" value="Hide All Employees"/>
+             <input class="btn btn-outline-dark" id='seeAllEmpl' type="submit" value="See All Employees"/>
+             <input class="btn btn-outline-dark" id='hideAllEmployees' type="submit" value="Hide All Employees"/>
 
-             <table id='allEmployeeTable' style= "visibility: hidden" >
-                    <caption>My Employees</caption>
-                <tr>
-                    <th>
-                        Name
-                    </th>
-                  
-                    <th>
-                        Manager
-                    </th>
-                    <th>
-                          Email  
-                    </th>
-                </tr>
+             <table class="table" id='allEmployeeTable' style= "display: none" >
+                  <thead class="thead-light">
+                        <tr>
+                                <th>
+                                    Name
+                                </th>
+                              
+                                <th>
+                                    Manager
+                                </th>
+                                <th>
+                                      Email  
+                                </th>
+                            </tr>
+                  </thead>
+               
                 <tbody id='tbodyAll'>
 
                 </tbody>
@@ -225,9 +294,9 @@
             <h3>See All Resolved Requests</h3>
             
                 
-            <input id='allResolved' type="submit" value="See All Resolved Request"/>
-            <button id="closeAllResolvedRequest">Close</button>
-            <ul id='allRRequests' style="display: none">
+            <input class="btn btn-outline-dark" id='allResolved' type="submit" value="See All Resolved Request"/>
+            <button class="btn btn-outline-dark" id="closeAllResolvedRequest">Close</button>
+            <ul class="list-group" id='allRRequests' style="display: none">
     
             </ul>
 
