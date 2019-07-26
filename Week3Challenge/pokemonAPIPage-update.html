@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Pokeman Cards Update</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="pokemon_book_style.css">
+    <script src="pokemonAPI-update.js"></script>
+</head>
+
+
+<body>
+
+    <h1>Personal Library and Pokemon Card Generator</h1>
+
+    <div id='addBook'>
+                Title:<br>
+                <input id='addTitle' type="text" name="title" >
+                <br>
+                Author:<br>
+                <input id='addAuthor' type="text" name="author" >
+                <br>
+                Genre:<br>
+                <input id='addGenre' type="text" name="Genre" >
+                <br>
+                Cover URL:<br>
+                <input id='addCover' type="text" name="Cover URL" >
+                <br><br>
+                <input id='addB' type="submit" value="Add New Book">
+       
+    </div>
+
+ 
+
+    <div>
+        <input id='new' type="submit" value="Reload Book List">
+
+        <ul id='booklist'>
+            
+        </ul>
+
+    </div>
+
+    <div id='bookShelf'>
+        <span>
+            <p id='itemID'></p>
+            <p id='booktitle'></p>
+            <p id='authorbook'></p>
+            <p id='bookgenre'></p>
+            <img id='imgbook'>
+            <br>
+            <input style='visibility: hidden' id='remove' type="submit" value="Delete Book From List">
+            <input style='visibility: hidden' id='edit' type="submit" value="Edit this book">
+
+            <div id='editPage'style='visibility: hidden' >
+
+                 Title:<br>
+                <input id='edtiTitle' type="text" name="title" >
+                <br>
+                Author:<br>
+                <input id='editAuthor' type="text" name="author" >
+                <br>
+                Genre:<br>
+                <input id='editGenre' type="text" name="Genre" >
+                <br>
+                Cover URL:<br>
+                <input id='editCover' type="text" name="Cover URL" >
+                <br><br>
+                <input id='editB' type="submit" value="Edit Book">
+            </div>
+        </span>
+
+    </div>
+
+
+    <div>
+        <p id='name'></p>
+        <p id='number'></p>
+        <p id='series'></p>
+        <img id='img'>
+        
+    </div>
+
+ 
+    <div>
+        <button type="button" id="pokemon">Click for pokemon card info</button>
+    </div>
+
+</body>
+
+</html>
