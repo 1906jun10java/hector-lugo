@@ -243,6 +243,7 @@ function getPendingList(xhr) {
         
 
         let element=document.createElement('li');
+        element.className="list-group-item";
         element.id='pendingListElement '+i;
         let elementstxt=document.createTextNode('Pending offer# '+pendingList[i].rID+
         '------Amount Requested: '+pendingList[i].ammount);
@@ -295,6 +296,7 @@ function getMyResolved(xhr) {
         else{
         
         let element=document.createElement('li');
+        element.className="list-group-item";
         element.id='pendingListElement '+i;
             if(pendingList[i].status==1){
              let elementstxt=document.createTextNode('Accepted offer# '+pendingList[i].rID+
@@ -355,6 +357,7 @@ function getAllResolved(xhr) {
 
 
         let element=document.createElement('li');
+        element.className="list-group-item";
         element.id='pendingListElement '+i;
             if(pendingList[i].status==1){
                 let elementstxt=document.createTextNode('Accepted offer# '+pendingList[i].rID+
@@ -505,6 +508,7 @@ function getMyEmployeeList(xhr) {
             
             else{
             let element=document.createElement('li');
+            element.className="list-group-item"
             element.id='employeePendingListElement '+employeeRequests[i].rID;
             let elementstxt=document.createTextNode('Pending offer# '+employeeRequests[i].rID+
             '------Amount Requested: '+employeeRequests[i].ammount);
@@ -555,7 +559,7 @@ function makeImgButtons(parentElementWithId,currentID){
     let imgB=document.createElement('input');
     imgB.type="submit";
     imgB.value="See Img";
-    imgB.class="";
+    imgB.className="btn btn-outline-dark";
     element=document.getElementById("imgDiv"+counter);
     element.appendChild(imgB);
     imgB.onclick=function(){

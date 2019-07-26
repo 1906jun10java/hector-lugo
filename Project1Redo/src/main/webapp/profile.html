@@ -22,7 +22,7 @@
 
     <div class="list-group list-group-horizontal" id='BasicInfo'>
 
-        <ul class="list-group">
+        <ul class="list-group list-group-horizontal">
             <li class="list-group-item list-group-item-light" id='employeeID'>
 
             </li>
@@ -38,22 +38,23 @@
             </li>
 
         </ul>
+
     </div>
 
    
         <h3>Change Your Info:</h3>
         
-        
+        <iframe style="display:none" id="redirectHere"></iframe>
             <button class="btn btn-outline-dark" id="seeAddress">Change Address</button>
             <button class="btn btn-outline-dark" id="closeAddress">Close</button>
 
 
-         <form id="userUpdateAddress" action="userUpdate" method='post' style="display: none" >
+         <form id="userUpdateAddress" action="userUpdate" method='post' style="display: none" target="redirectHere" >
                  <fieldset>
                          <legend>address:</legend>
-                         <input class="btn btn-outline-dark" required autocomplete="off" name="address"/>
+                         <input  required autocomplete="off" name="address"/>
                      </fieldset>
-             <input type="submit" value="Send Request"/>
+             <input class="btn btn-outline-dark" type="submit" value="Send Request"/>
          </form>
         
      
@@ -63,12 +64,12 @@
         
             <button class="btn btn-outline-dark" id="seeEmail">Change Email</button>
             <button class="btn btn-outline-dark" id="closeEmail">Close</button>
-    <form id="userUpdateEmail" action="userUpdate" method='post' style="display: none">
+    <form id="userUpdateEmail" action="userUpdate" method='post' style="display: none" target="redirectHere" >
             <fieldset>
                     <legend>email:</legend>
-                    <input class="btn btn-outline-dark" required autocomplete="off" name="email"/>
+                    <input  required autocomplete="off" name="email"/>
                 </fieldset>
-        <input type="submit" value="Send Request"/>
+        <input class="btn btn-outline-dark" type="submit" value="Send Request"/>
     </form>
 
 <br>
@@ -78,15 +79,15 @@
        
         <button class="btn btn-outline-dark" id="seePassword">Change Password</button>
         <button class="btn btn-outline-dark" id="closePassword">Close</button>
-<form id="userUpdatePassword" action="userUpdate" method='post' style="display: none" >
+<form id="userUpdatePassword" action="userUpdate" method='post' style="display: none" target="redirectHere" >
         <fieldset>
                 <legend>Passord:</legend>
-                <input class="btn btn-outline-dark" required autocomplete="off" name="oldPassword"/>
+                <input  required autocomplete="off" name="oldPassword"/>
             </fieldset>
 
            <fieldset>
                 <legend>New Password:</legend>
-                <inputclass="btn btn-outline-dark" required autocomplete="off" name="newPassword"/>
+                <input required autocomplete="off" name="newPassword"/>
             </fieldset>
     <input class="btn btn-outline-dark" type="submit" value="Send Request"/>
 </form>
@@ -192,15 +193,18 @@
 
 
 
+   
 
-
-    <div class="container" id='managerStuff' style='display: none'>
+    <div  id='managerStuff' style='display: none'>
         
-        <div class="jumbotron text-center">
-                <h3>Manager Section</h3>
-        </div>
       
+      
+            <div class="jumbotron text-center">
+                    <h3>Manager Section</h3>
+            </div>
 
+
+        <div class="container">
 
         <h3>See Your Employees</h3>
 
@@ -305,7 +309,7 @@
 
 
 
-
+    </div>
 
 
 

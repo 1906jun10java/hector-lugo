@@ -4,21 +4,26 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Login</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 
 <body>
+
+    <div class="jumbotron text-center">
+        <h1>Log In</h1>
+    </div>
         <div class="display">
-                <form action="login" method="POST">
+                <form style="text-align: center" action="login" method="POST">
                     <fieldset>
                         <legend>username:</legend>
                         <input required autocomplete="off" name="username"/>
                     </fieldset>
                     <fieldset>
                         <legend>password:</legend>
-                        <input required autocomplete="off" type="password" name="password"/>
+                        <input  required autocomplete="off" type="password" name="password"/>
                     </fieldset>
                     <br>
-                    <input type="submit" value="login"/>
+                    <input class="btn btn-outline-dark" type="submit" value="login"/>
                 </form>
 </body>
 </html> 
