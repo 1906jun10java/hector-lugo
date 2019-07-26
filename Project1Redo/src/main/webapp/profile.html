@@ -17,34 +17,50 @@
             </form>
 
     </div>
+
+
+  
+    
    
     <div class="container">
 
-    <div class="list-group list-group-horizontal" id='BasicInfo'>
 
-        <ul class="list-group list-group-horizontal">
-            <li class="list-group-item list-group-item-light" id='employeeID'>
+        <div class="row">
+                <div class="col" id='BasicInfo'>
 
-            </li>
-            <li class="list-group-item list-group-item-light" id='managerName'>
+                        <ul class="list-group list-group-horizontal">
+                            <li class="list-group-item list-group-item-light" id='employeeID'>
+                
+                            </li>
+                            <li class="list-group-item list-group-item-light" id='managerName'>
+                
+                            </li>
+                            <li class="list-group-item list-group-item-light" id='address'>
+                
+                            </li>
+                
+                            <li class="list-group-item list-group-item-light" id='email'>
+                
+                            </li>
+                
+                        </ul>
+                
+                    </div>
+        </div>
+           
 
-            </li>
-            <li class="list-group-item list-group-item-light" id='address'>
-
-            </li>
-
-            <li class="list-group-item list-group-item-light" id='email'>
-
-            </li>
-
-        </ul>
-
-    </div>
-
+    
    
         <h3>Change Your Info:</h3>
-        
+        <br>
+        <br>
+
+        <div class="row">
+
+       <div class= "col">
         <iframe style="display:none" id="redirectHere"></iframe>
+
+        
             <button class="btn btn-outline-dark" id="seeAddress">Change Address</button>
             <button class="btn btn-outline-dark" id="closeAddress">Close</button>
 
@@ -56,12 +72,12 @@
                      </fieldset>
              <input class="btn btn-outline-dark" type="submit" value="Send Request"/>
          </form>
-        
+        </div>
      
      <br>
          <br>
      
-        
+        <div class="col">
             <button class="btn btn-outline-dark" id="seeEmail">Change Email</button>
             <button class="btn btn-outline-dark" id="closeEmail">Close</button>
     <form id="userUpdateEmail" action="userUpdate" method='post' style="display: none" target="redirectHere" >
@@ -71,12 +87,14 @@
                 </fieldset>
         <input class="btn btn-outline-dark" type="submit" value="Send Request"/>
     </form>
-
+</div>
 <br>
 <br>
 
 
-       
+       <div class ="col">
+
+      
         <button class="btn btn-outline-dark" id="seePassword">Change Password</button>
         <button class="btn btn-outline-dark" id="closePassword">Close</button>
 <form id="userUpdatePassword" action="userUpdate" method='post' style="display: none" target="redirectHere" >
@@ -91,17 +109,16 @@
             </fieldset>
     <input class="btn btn-outline-dark" type="submit" value="Send Request"/>
 </form>
-
+</div>
+</div>
 
 <br>
 
-
+<br>
 
     <div id='add'>
 
-        <div>
-
-        </div>
+      
        <h3>Make a new request </h3>>
 
              <button class="btn btn-outline-dark" id="seeMakeRequest">Make a new Request</button>
