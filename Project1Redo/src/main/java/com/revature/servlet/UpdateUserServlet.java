@@ -54,7 +54,7 @@ public class UpdateUserServlet extends HttpServlet
 
         Employees u = new Employees(userId, managerId, name, address, isManager, mamagerName, email);
         
-        resp.getWriter().write(new ObjectMapper().writeValueAsString(u));
+       // resp.getWriter().write(new ObjectMapper().writeValueAsString(u));
       }
       catch (SQLException e) {
         e.printStackTrace();
@@ -95,7 +95,7 @@ public class UpdateUserServlet extends HttpServlet
 
         Employees u = new Employees(userId, managerId, name, address, isManager, mamagerName, email);
         
-        resp.getWriter().write(new ObjectMapper().writeValueAsString(u));
+        //resp.getWriter().write(new ObjectMapper().writeValueAsString(u));
       }
       catch (SQLException e)
       {
